@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 목록</title>
+    <link th:href="@{/style.css}"
+          href="../style.css" rel="stylesheet">
+</head>
+<body>
+<h2>게시판</h2>
+<div class="container">
+    <div class="search-area">
+        <form method="post" th:action="@{/board/search}" th:object="${searchdata}">
+            <select name="category">
+                <option value="writer" selected>작성자</option>
+                <option value="title">제목</option>
+            </select>
+            <input name="searchText" type="text" class="search-input" required/>
+            <button type="submit" class="btn">검색</button>
+        </form>
+        <button
+                th:onclick="|location.href='@{/board/write}'|"
+                class="btn"
+        >작성</button>
+    </div>
+    <div class="datalist">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>작성자</th>
+                <th>제목</th>
+                <th>조회수</th>
+                <th>작성일</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="board : ${boardList}" th:attr="class=${board.checked == 'y' ? 'highlight-true' : 'highlight-false'}"
+                th:onclick="|location.href='@{/board/view/{boardNo}(boardNo=${board.boardNo})}'|"
+            >
+                <a th:href="@{/board/view(boardNo=${board.boardNo})}">
+                <td th:text="${board.writer}">${board.writer}</td>
+                <td th:text="${board.title}">${board.title}</td>
+                <td th:text="${board.readCount}">${board.readCount}</td>
+                <td th:text="${#temporals.format(board.writeDate, 'yyyy-MM-dd')}">${board.writeDate}</td>
+            </a>
+            </tr>
+            </tbody>
+        </table>
+        <div th:bisbled="${notFound == null} ? 'disbled'">
+            <p th:text="${notFount}">검색 결과가 없습니다</p>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

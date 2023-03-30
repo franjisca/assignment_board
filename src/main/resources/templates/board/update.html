@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>글 수정</title>
+  <link th:href="@{/style.css}"
+        href="../style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container detail">
+
+<form th:action="@{/board/update/{boardNo}(boardNo=${board.boardNo})}" th:object="${board}" method="post" >
+  중요<input type="checkbox" value="y" id="chk-box" name="checked" th:checked="${board.checked == 'y'}"/>
+  제목 <input type="text" class="search-input" name="title" required th:value="${board.title}">
+  작성자 <input type="text" class="search-input" name="writer" required th:value="${board.writer}" readonly>
+  <input type="text" class="view-contents" name="contents" required th:value="${board.contents}"/>
+
+  <div> 제목과 작성자, 내용을 필수로 입력해주세요.</div>
+
+ <button type="submit" class="btn">수정하기</button>
+  <button type="button" onclick="location.href='/board/list'" class="btn">작성 취소</button>
+</form>
+</div>
+</body>
+</html>

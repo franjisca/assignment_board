@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title th:value="${board.getTitle()}">게시글</title>
+  <link th:href="@{/style.css}"
+        href="../style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container detail">
+
+  <form>
+    제목 <input type="text" class="search-input" readonly th:value="${board.title}">
+    작성자 <input type="text" class="search-input" th:value="${board.writer}" readonly>
+    <input type="text" class="view-contents" th:value="${board.contents}" readonly/>
+    <button type="button" onclick="location.href='/board/list'" class="btn">목록으로</button>
+    <button type="button" class="btn" th:onclick="|location.href='@{/board/update/{boardNo}(boardNo=${board.boardNo})}'|">수정</button>
+    <button type="button" class="btn" th:onclick="|location.href='@{/board/delete/{boardNo}(boardNo=${board.boardNo})}'|">삭제</button>
+  </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>글 작성중</title>
+  <link th:href="@{/style.css}"
+        href="../style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container detail">
+
+<form th:action="@{/board/write}" th:object="${board}" method="post" >
+  중요<input type="checkbox" value="y" id="chk-box" name="checked" />
+  제목 <input type="text" class="search-input" name="title" required>
+  작성자 <input type="text" class="search-input" name="writer" required th:value="${writerName}">
+  <textarea name="contents" required></textarea><br/>
+<th:block>
+  <div> 제목과 작성자, 내용을 필수로 입력해주세요.</div>
+</th:block>
+ <button type="submit" class="btn">작성</button>
+  <button type="button" onclick="location.href='/board/list'" class="btn">작성 취소</button>
+</form>
+</div>
+</body>
+</html>
