@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>메인페이지</title>
+    <link th:href="@{/style.css}"
+          href="../style.css" rel="stylesheet">
 </head>
 <body>
-
-<p> 안녕하세요 만나서 반갑습니다.</p>
-
+<div class="main-page">
+<button onclick="location.href='/board/list'" class="btn custom">게시판으로 이동</button>
+</div>
 </body>
 </html>

@@ -69,3 +69,18 @@ textarea, .view-contents {
     cursor: pointer;
 }
 
+.main-page {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+}
+
+.custom{
+    text-align: center;
+    position: absolute;
+    width: 20vw;
+    height: 10vh;
+    font-size: 3rem;
+    top: 40%;
+}
+
