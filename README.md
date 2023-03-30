@@ -2,7 +2,8 @@
 ![image](https://user-images.githubusercontent.com/96047335/228751526-7c55e961-dace-43e3-b9c7-774371d32f2b.png)
 
 - 스프링부트 3.0.5버전
-- Java11
+- gradle
+- Java 11
 - 뷰템플릿은 타임리프를 이용하여 작성하였습니다.
 
 프로젝트 임포트 후 BoardApplication 클래스에서 main 실행 부탁드립니다.
