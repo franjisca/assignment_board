@@ -20,8 +20,6 @@ public class MainController {
     @GetMapping("/")
     public String mainPage(Model model){
 
-       model.addAttribute("writer", boardService.getWriterName());
-
         return "main";
     }
 
