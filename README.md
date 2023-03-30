@@ -8,4 +8,4 @@
 
 프로젝트 임포트 후 BoardApplication 클래스에서 main 실행 부탁드립니다.
 
-Db를 사용하지 않아 ConcurrentHashMap을 선언하여 활용하였습니다.
+DB를 사용하지 않아 ConcurrentHashMap을 선언하여 활용하였습니다.
