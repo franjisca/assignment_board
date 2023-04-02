@@ -115,7 +115,7 @@ public class BoardController {
              List<Board> byWriter = boardService.findByWriter(searchData.getSearchText());
 
             if(byWriter.size() == 0) {
-                model.addAttribute("notFount", "검색결과가 없습니다.");
+                model.addAttribute("notFound", "검색결과가 없습니다.");
             }
 
             model.addAttribute("boardList", byWriter);
@@ -124,7 +124,7 @@ public class BoardController {
             List<Board> byTitle = boardService.findByTitle(searchData.getSearchText());
 
             if(byTitle.size() == 0) {
-                model.addAttribute("notFount", "검색결과가 없습니다.");
+                model.addAttribute("notFound", "검색결과가 없습니다.");
             }
 
             model.addAttribute("boardList", byTitle);
